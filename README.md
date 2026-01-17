@@ -2,6 +2,8 @@
 
 A TUI app to uninstall many Steam games at once on Linux, as a work around Steam's buggy right-click context menu.
 
+[![asciicast](https://asciinema.org/a/gyGmvlFObUsRkVQg.svg)](https://asciinema.org/a/gyGmvlFObUsRkVQg)
+
 ## Why?
 
 Steam on Linux has a known issue where the right-click context menu often fails to open (roughly 1 in 10 clicks works). This makes uninstalling games frustrating. This tool provides a reliable alternative that:
