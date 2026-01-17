@@ -283,14 +283,13 @@ def get_all_installed_games() -> list[SteamGame]:
 
 def is_steam_running() -> bool:
     """Check if Steam is currently running."""
-    import subprocess
+    import psutil
 
-    try:
-        result = subprocess.run(
-            ["pgrep", "-x", "steam"],
-            capture_output=True,
-            text=True,
-        )
-        return result.returncode == 0
-    except Exception:
-        return False
+    for proc in psutil.process_iter(["name"]):
+        try:
+            name = proc.info["name"]
+            if name and name.lower() in ("steam", "steam.exe"):
+                return True
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            continue
+    return False
