@@ -89,6 +89,7 @@ class GameListScreen(Screen):
         table.add_column("Library", key="library", width=30)
 
         self._populate_table()
+        table.focus()
 
     def _populate_table(self) -> None:
         """Populate or refresh the table with games."""
