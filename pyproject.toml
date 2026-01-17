@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "steam-bulk-uninstaller"
+version = "0.1.0"
+description = "A TUI for cleanly uninstalling Steam games on Linux"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "textual>=0.50.0",
+]
+
+[project.scripts]
+steam-bulk-uninstaller = "steam_uninstaller.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["steam_uninstaller"]
